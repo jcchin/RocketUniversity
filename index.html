@@ -44,8 +44,9 @@
 			<div class="slides">
 				<section>
 					<h1> Rocket University</h1>
-					<img height="auto" width="50" style="background:none; border:none;" src="img/cursorsThumbnail.png" alt="arrows">
 					<p> navigate slides with the left and right arrow keys on your keyboard (or swipe with your phone)</p>
+					<img height="auto" width="50" style="background:none; border:none;" src="img/cursorsThumbnail.png" alt="arrows">
+
 					<br>
 					<p> press "esc" to navigate the minimap </p>
 					<p> press "s" to enter presentation mode </p>
@@ -184,8 +185,30 @@
 				</section>
 
 				<section>
-					<h2>Airborne</h2>
-					<p> <a href="http://www.airborne-sys.com/files/movie/dragonfly_edit.wmv" target="_blank">Airborne External Link</a>.</p>
+					<img height="250" width="auto" style="background:none; border:none; box-shadow:none;" src="img/air1.png" alt="airborne1">
+					<img height="250" width="auto" style="background:none; border:none; box-shadow:none;" src="img/air3.png" alt="airbornelogo">
+					<br>
+					<p><img height="100" width="auto" style="background:none; border:none; box-shadow:none;" src="img/airlogo.png" alt="airbornelogo">
+					 <a style="position:relative; bottom:50px" href="http://www.airborne-sys.com/files/movie/dragonfly_edit.wmv" target="_blank">Airborne External Video [link]</a></p>
+					<img height="auto" width="350" style="background:none; border:none; box-shadow:none;" src="img/air2.png" alt="airborne2">
+
+				</section>
+
+				<section>
+					<h2>Stretch Goal</h2>
+					<ul> Perform a risk reduction analysis on controlled decent
+						<li>Mitigates landing impact forces, aiding in the   reusability of the balloon gondola</li>
+						<li>Minimizes the risk of landing in unfavorable environments, such as water</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Stretch Goal</h2>
+					<ul> Airborne Systems has offered the following:
+						<li>Customized controlled descent system, scalable to DRAGONFLY</li>
+						<li>Assistance with design integration</li>
+						<li>Formal training for system and software</li>
+						<li>In-kind system contribution of $100,000</li>
+					</ul>
 				</section>
 				<section>
 					<h2>Slides</h2>
@@ -280,7 +303,7 @@
 					</p>
 				</section>
 
-				<section>
+				<section data-state="defaultevent">
 					<h2>Global State</h2>
 					<p>
 						Set <code>data-state="something"</code> on a slide and <code>"something"</code>
@@ -289,7 +312,7 @@
 					</p>
 				</section>
 
-				<section data-state="customevent">
+				<section data-state="skyevent">
 					<h2>Custom Events</h2>
 					<p>
 						Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
@@ -477,6 +500,20 @@ function linkify( selector ) {
 					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
 				]
 			});
+			Reveal.addEventListener( 'skyevent', function() {
+				var fileref=document.createElement("link")
+				  fileref.setAttribute("rel", "stylesheet")
+				  fileref.setAttribute("type", "text/css")
+				  fileref.setAttribute("href", "css/theme/sky.css")
+				  document.getElementsByTagName("head")[0].appendChild(fileref)
+			} );
+			Reveal.addEventListener( 'defaultevent', function() {
+				var fileref=document.createElement("link")
+				  fileref.setAttribute("rel", "stylesheet")
+				  fileref.setAttribute("type", "text/css")
+				  fileref.setAttribute("href", "css/theme/default.css")
+				  document.getElementsByTagName("head")[0].appendChild(fileref)
+			} );
 
 		</script>
 
